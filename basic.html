@@ -44,9 +44,9 @@ them.
           let b = parseInt(document.getElementById("n2").value);
           let c = parseInt(document.getElementById("n3").value);
 
-          if (a > b && a > c) {
+          if (a >= b && a >= c) {
             document.getElementById("r").value = a;
-          } else if (b > a && b > c) {
+          } else if (b >= a && b >= c) {
             document.getElementById("r").value = b;
           } else {
             document.getElementById("r").value = c;
