@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script>
+      function add() {
+        console.log(arguments);
+        var sum = 0;
+        for (i = 0; i < arguments.length; i++) {
+          sum = sum + arguments[i];
+        }
+        return sum;
+      }
+      console.log(add(20, 30, 40, 50));
+      console.log(add(20, 30, 40, 50, 60, 70, 80));
+    </script>
+  </head>
+  <body></body>
+</html>

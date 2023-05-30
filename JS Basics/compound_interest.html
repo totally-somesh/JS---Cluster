@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="compound_interest.js"></script>
+  </head>
+
+  <body>
+    PAmt : <input type="text" id="PAmt" name="PAmount" />
+    <span>*</span>
+    <span id="error1"></span>
+    <br />
+
+    ROI : <input type="text" id="ROI" name="roi" />
+    <span>*</span>
+    <span id="error2"></span>
+    <br />
+
+    Period : <input type="text" id="period" name="period" />
+    <span>*</span>
+    <span id="error3"></span>
+    <br />
+
+    Result : <input type="text" id="r" name="result" disabled />
+    <br />
+    <button
+      type="button"
+      id="b1"
+      name="button1"
+      onclick="getCompoundInterest()"
+    >
+      Press Here To Find CI
+    </button>
+  </body>
+</html>

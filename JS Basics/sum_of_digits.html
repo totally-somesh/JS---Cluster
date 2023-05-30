@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <style>
+      span {
+        color: red;
+      }
+    </style>
+
+    <script>
+      function validateNumber(n, error) {
+        let a = document.getElementById(n).value;
+
+        if (a === "" || isNaN(a) || 8 <= a.length || a.length <= 3) {
+          document.getElementById(error).innerHTML =
+            "Please Enter A Valid Number ! ";
+          return false;
+        }
+        return true;
+      }
+
+      function sumOfDigits() {
+        let flag = validateNumber("n1", "error1");
+
+        if (flag) {
+          let x = document.getElementById("n1").value; //12345
+          let length = x.length;
+          let a = x % 10; //5
+          let sum = a; //5
+
+          for (i = 0; i < length - 1; i++) {
+            x = x / 10; //1234.5               | 123.45 | 12.345 | 1.2
+            a = Math.trunc(x); //1234          | 123    | 12     | 1
+            let b = a % 10; //4                | 3      | 2      | 1
+            sum = parseInt(sum + b); //9       | 12     | 14     | 15
+          }
+
+          document.getElementById("r1").value = sum;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <form name="sumofdigit">
+      Number : <input type="text" id="n1" name="number1" />
+      <span id="redstar">*</span>
+      <span id="error1"></span>
+      <br />
+
+      Result : <input type="text" id="r1" name="result1" />
+      <br />
+
+      <button type="button" id="b1" name="button1" onclick="sumOfDigits()">
+        Press Here To Find Sum Of Digits
+      </button>
+    </form>
+  </body>
+</html>

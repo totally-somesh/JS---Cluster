@@ -1,0 +1,84 @@
+//Write a program to accept three positive numbers and output the largest of
+them.
+
+<html>
+  <head>
+    <style>
+      #redstar {
+        color: red;
+      }
+
+      #error1a {
+        color: green;
+      }
+
+      #error2a {
+        color: green;
+      }
+
+      #error3a {
+        color: green;
+      }
+    </style>
+    <script>
+      function validateNumber(n, error, error1) {
+        let a = document.getElementById(n).value;
+
+        if (a < 0 || a === "" || isNaN(a)) {
+          document.getElementById(error).innerHTML =
+            " Please Enter A Valid Number ! ";
+          return false;
+        } else {
+          //document.getElementById(error1).innerHTML = " Okay. Boss !";
+          return true;
+        }
+      }
+
+      function largestNumber() {
+        let flag1 = validateNumber("n1", "error1", "error1a");
+        let flag2 = validateNumber("n2", "error2", "error2a");
+        let flag3 = validateNumber("n3", "error3", "error3a");
+
+        if (flag1 && flag2 && flag3) {
+          let a = parseInt(document.getElementById("n1").value);
+          let b = parseInt(document.getElementById("n2").value);
+          let c = parseInt(document.getElementById("n3").value);
+
+          if (a >= b && a >= c) {
+            document.getElementById("r").value = a;
+          } else if (b >= a && b >= c) {
+            document.getElementById("r").value = b;
+          } else {
+            document.getElementById("r").value = c;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form name="largestno">
+      Number1 : <input type="text" id="n1" name="number1" />
+      <span id="redstar">*</span>
+      <span id="error1"></span>
+      <span id="error1a"></span>
+      <br />
+      Number2 : <input type="text" id="n2" name="number2" />
+      <span id="redstar">*</span>
+      <span id="error2"></span>
+      <span id="error2a"></span>
+      <br />
+
+      Number3 : <input type="text" id="n3" name="number3" />
+      <span id="redstar">*</span>
+      <span id="error3"></span>
+      <span id="error3a"></span>
+      <br />
+
+      Result : <input type="text" id="r" name="result" disabled />
+
+      <button type="button" id="b1" name="button1" onclick="largestNumber()">
+        Press Here To Find Largest Number
+      </button>
+    </form>
+  </body>
+</html>
