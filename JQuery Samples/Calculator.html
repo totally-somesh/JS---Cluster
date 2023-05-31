@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="jQuery.js"></script>
+    <script src="FunctionFile.js"></script>
+    <script>
+      $(document).ready(function () {
+        const fs = require("fs");
+        $("#b1").click(function () {
+          console.log(fs.Add(12, 18));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Number1 : <input type="text" id="n1" /><br />
+    Number2 :
+    <input type="text" id="n2" /><br />
+    Result : <input type="text" id="r" disabled />
+    <br />
+
+    <button type="button" id="b1">Add</button>
+    <button type="button" id="b2">Subtract</button>
+    <button type="button" id="b3">Multiply</button>
+    <button type="button" id="b4">Divide</button>
+  </body>
+</html>

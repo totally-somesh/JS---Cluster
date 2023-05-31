@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="jQuery.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          var a = $("input[name=degree]:checked").val();
+
+          skills = [];
+
+          $("input[name=skills]:checked").each(function (index, element) {
+            skills.push($(element).val());
+          });
+          $("#mydiv").html("Skills : " + skills);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Degree : <input type="radio" id="r1" name="degree" value="BE" />
+    <label for="r1">BE</label>
+    <input type="radio" id="r2" name="degree" value="ME" />
+    <label for="r2">ME</label>
+    <input type="radio" id="r3" name="degree" value="BTech" />
+    <label for="r3">BTech</label>
+    <input type="radio" id="r4" name="degree" value="MTech" />
+    <label for="r4">MTech</label>
+    <input type="radio" id="r5" name="degree" value="MCA" />
+    <label for="r5">MCA</label>
+
+    Skill : <input type="checkbox" name="skills" id="s1" value="JAVA" />
+    <label for="s1">JAVA</label>
+    <input type="checkbox" name="skills" id="s2" value="C#" />
+    <label for="s2">C#</label>
+    <input type="checkbox" name="skills" id="s3" value="SQL" />
+    <label for="s3">SQL</label>
+
+    <button id="btn" name="button" value="btn">selected skills</button>
+    <div id="mydiv"></div>
+  </body>
+</html>

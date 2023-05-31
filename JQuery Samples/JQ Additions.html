@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script src="jQuery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#b1").click(function () {
+          var number1 = parseInt($("#n1").val());
+          var number2 = parseInt($("#n2").val());
+
+          var addition = number1 + number2;
+
+          $("#r1").val(addition);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Number 1 :
+    <input type="text" id="n1" name="num1" placeholder="Enter Valid Number" />
+    Number 2 :
+    <input type="text" id="n2" name="num2" placeholder="Enter Valid Number" />
+
+    Result : <input type="text" id="r1" name="result1" disabled />
+
+    <button type="button" id="b1" name="b1" value="B1">
+      Press Here For Addition
+    </button>
+  </body>
+</html>

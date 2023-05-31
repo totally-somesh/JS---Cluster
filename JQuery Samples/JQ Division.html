@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="jQuery.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#b1").dblclick(function () {
+          var number1 = parseInt($("#n1").val());
+          var number2 = parseInt($("#n2").val());
+
+          if (number2 !== 0) {
+            var division = number1 / number2;
+            $("#r1").val(division);
+          } else {
+            $("#r1").val("Can Not Divide By Zero ! ");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    Number 1 :
+    <input
+      type="text"
+      id="n1"
+      name="number1"
+      placeholder="Enter A Valid Number"
+    />
+    Number 2 :
+    <input
+      type="text"
+      id="n2"
+      name="number2"
+      placeholder="Enter A Valid Number"
+    />
+
+    Result : <input type="text" id="r1" name="result1" disabled />
+
+    <button type="button" id="b1" name="button1" value="B1">
+      Press Here For Division
+    </button>
+  </body>
+</html>

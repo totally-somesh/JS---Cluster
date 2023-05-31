@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="jQuery.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          $("#myDiv").animate(
+            {
+              "margin-top": "100px",
+            },
+            2000
+          );
+        });
+      });
+
+      //<i src="java-png-java-icon-1600.png" id="img"></i>
+    </script>
+  </head>
+  <body>
+    <button type="button" id="btn" name="btn" value="b1">Move</button>
+    <div id="myDiv">
+      <img src="java-png-java-icon-1600.png" width="100px" height="100px" />
+    </div>
+  </body>
+</html>

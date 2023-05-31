@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script>
+      var data;
+      function sendRequest() {
+        data = fetch("https://jsonplaceholder.typicode.com/posts/");
+        data
+          .then((d) => {
+            return d.json();
+          })
+          .then((d) => displayData(d))
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+
+      function displayData(DATA) {
+        var str = "<table border='2'><tr><th>ID</th><th>USER ID</th></tr>";
+        for (var obj of DATA) {
+          str += `<tr><td>${obj.id}</td><td>${obj.userId}</td></tr>`;
+        }
+        str += "</table>";
+
+        document.getElementById("myDIV").innerHTML = str;
+      }
+    </script>
+  </head>
+  <body>
+    <button
+      type="text"
+      id="btn"
+      name="button1"
+      value="BTN1"
+      onclick="sendRequest()"
+    >
+      Press Here To Send AJAX Request
+    </button>
+    <div id="myDIV"></div>
+  </body>
+</html>

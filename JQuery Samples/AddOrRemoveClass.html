@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <style>
+      .myclass {
+        background-color: black;
+        text-shadow: 2px 2px 2px grey;
+        border-radius: 10px;
+        border: 10px;
+      }
+      .MYC {
+        background-color: brown;
+        text-shadow: 2px 2px 2px red;
+        border-radius: 10px;
+        border: 100px;
+      }
+    </style>
+    <script src="jQuery.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#b1").hover(
+          function () {
+            $(this).addClass("MYC").removeClass("myclass");
+          },
+          function () {
+            $(this).removeClass("MYC").addClass("myclass");
+          }
+        );
+      });
+    </script>
+  </head>
+
+  <body>
+    <button type="button" class="myclass" id="b1">Mouse Hover Here</button>
+  </body>
+</html>

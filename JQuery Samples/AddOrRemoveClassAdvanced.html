@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <style>
+      .myclass {
+        border: 10px;
+        border-radius: 20px;
+        color: black;
+        text-shadow: 2px 2px 2px greenyellow;
+        background-color: grey;
+        display: none;
+      }
+      .myc {
+        border: 10px;
+        border-radius: 20px;
+        color: red;
+        text-shadow: 2px 2px 2px brown;
+        background-color: grey;
+        display: block;
+      }
+    </style>
+    <script src="jQuery.js"></script>
+    <script>
+      $(document).ready(function () {
+        function validateTextBox(n, err) {
+          alert("Inside validation");
+          var name = $("#" + n).val();
+
+          if (name === "" || name.trim().length === 0) {
+            alert("INside If Of Validation");
+            $("#" + err).html("Please Enter A Valid Input !");
+            return false;
+          } else {
+            $("#" + err).html("");
+            return true;
+          } // end of if-else
+        } //end of validateTextBox()
+
+        $("#btn").click(function () {
+          var arr = $("input[name=course]:checked").val();
+
+          $("#mydiv").html(arr);
+        }); //end of click event function
+
+        $("#chk").change(function () {
+          var flag1 = validateTextBox("nm", "nameErr");
+          var flag2 = validateTextBox("ad", "addErr");
+
+          if (!flag1 && !flag2) {
+            $("#chk").attr("disabled", true);
+          }
+
+          if (flag1 && flag2 && $("#chk").is(":checked")) {
+            $(".myclass").addClass("myc").removeClass("myclass");
+          } else {
+            $(".myclass").removeClass("myc").addClass("myclass");
+          }
+        });
+      }); //end of ready()
+    </script>
+  </head>
+
+  <body>
+    <div>
+      Name :
+      <input type="text" id="nm" name="nm" placeholder="Enter Name Here" />
+      <span>*</span><span id="nameErr"></span>
+      <br />
+
+      Address :
+      <input type="text" id="ad" name="ad" placeholder="Enter Address Here" />
+      <span>*</span><span id="addErr"></span>
+      <br />
+
+      <input type="checkbox" id="chk" name="chk" value="chk" />
+      <label for="chk">Show Courses</label>
+      <br />
+    </div>
+
+    <div class="myclass">
+      <input type="radio" id="r1" name="course" value="DAC" />
+      <label for="r1">DAC</label>
+
+      <input type="radio" id="r2" name="course" value="DITISS" />
+      <label for="r2">DITISS</label>
+
+      <input type="radio" id="r3" name="course" value="DBDA" />
+      <label for="r3">DBDA</label>
+
+      <input type="radio" id="r4" name="course" value="PRECAT" />
+      <label for="r4">PRECAT</label>
+
+      <button type="button" id="btn" name="btn" value="btn">
+        Show Details
+      </button>
+    </div>
+
+    <div id="mydiv"></div>
+  </body>
+</html>

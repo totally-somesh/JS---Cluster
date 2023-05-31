@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <script src="jQuery.js"></script>
+    <script>
+      $(document).ready(function () {
+        var cnt = 0;
+
+        $("#b1").click(function () {
+          var cloned = $("#para").clone();
+          $(cloned).attr("id", "P" + cnt);
+          cnt++;
+
+          $(cloned).addClass("P1");
+          $("#mydiv").append(cloned);
+        }); // end of append()
+
+        $("#b2").click(function () {
+          var cloned = $("#para").clone();
+          $(cloned).attr("id", "P" + cnt);
+          cnt++;
+
+          $(cloned).addClass("P2");
+          $("#mydiv").prepend(cloned);
+        }); // end of prepend()
+
+        $("#b3").click(function () {
+          $("p").remove(".P1");
+        }); // end of remove append()
+
+        $("#b4").click(function () {
+          $("p").remove(".P2");
+        }); // end of remove append()
+      });
+    </script>
+
+    <body>
+      <button type="button" id="b1" name="button" value="B1">Append</button>
+      <button type="button" id="b2" name="button" value="B2">Prepend</button>
+      <button type="button" id="b3" name="button" value="B3">
+        Remove Append
+      </button>
+      <button type="button" id="b4" name="button" value="B4">
+        Remove Prepend
+      </button>
+
+      <div id="mydiv">
+        <p id="para">Paragraph</p>
+      </div>
+    </body>
+  </head>
+</html>
