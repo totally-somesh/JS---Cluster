@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Order ! Order !</title>
+    <script src="orderValidation.js"></script>
+  </head>
+  <body>
+    <form name="form1" action="*">
+      Order ID :
+      <input
+        type="text"
+        id="id"
+        name="id"
+        placeholder="Enter Order ID"
+        required
+      />
+      <br />
+      <br />
+      Customer Name :
+      <input
+        type="text"
+        id="cname"
+        name="cname"
+        placeholder="Enter Customer Name"
+        required
+      />
+      <br />
+      <br />
+      Billing Date :
+      <input
+        type="text"
+        id="bdate"
+        name="bdate"
+        placeholder="Enter Billing Date : MM/DD/YYYY"
+        required
+      />
+      <br />
+      <br />
+      Shippping Date :<input
+        type="text"
+        id="sdate"
+        name="sdate"
+        placeholder="Enter Shipping Date : MM/DD/YYYY"
+        required
+      />
+      <br />
+      <br />
+      Order Total :
+      <input
+        type="text"
+        id="ototal"
+        name="ototal"
+        placeholder="Enter Order ID"
+        required
+      />
+      <br />
+      <br />
+      <button type="button" id="btn" name="btn" onclick="validate()">
+        Display Details
+      </button>
+    </form>
+
+    <div id="myDiv">-: Order Details :-</div>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Details</title>
+    <script src="./validatedetails.js"></script>
+  </head>
+  <body>
+    <form name="form1" action="*">
+      Name :
+      <input
+        type="text"
+        id="nm"
+        name="nm"
+        placeholder="Enter Your Name"
+        required
+      />
+
+      <br />
+      <br />
+
+      Birth Date : <input type="date" id="dt" name="dt" required />
+
+      <br />
+      <br />
+
+      Gender :
+      <input type="radio" id="male" name="gender" value="Male" />
+      <label for="male">Male</label>
+
+      <input type="radio" id="female" name="gender" value="Female" />
+      <label for="female">Female</label>
+
+      <br />
+      <br />
+
+      Email :
+      <input
+        type="text"
+        id="email"
+        name="email"
+        placeholder="Enter Your Name"
+        required
+      />
+
+      <br />
+      <br />
+
+      Lucky Number :
+      <input
+        type="text"
+        id="lnumber"
+        name="lnumber"
+        placeholder="Enter Your Name"
+        required
+      />
+
+      <br />
+      <br />
+
+      Favourite Foods :
+
+      <input type="checkbox" id="pizza" name="food" value="Pizza" />
+      <label for="pizza">Pizza</label>
+      <input type="checkbox" id="pasta" name="food" value="Pasta" />
+      <label for="pasta">Pasta</label>
+      <input type="checkbox" id="chinese" name="food" value="Chinese" />
+      <label for="chinese">Chinese</label>
+
+      <br />
+      <br />
+
+      <button
+        type="button"
+        id="btn"
+        name="btn"
+        onclick="validate(document.form1.nm, document.form1.lnumber)"
+      >
+        Send Details
+      </button>
+    </form>
+    <div id="myDiv"></div>
+  </body>
+</html>

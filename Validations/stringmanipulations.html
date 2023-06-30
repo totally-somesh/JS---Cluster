@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>String Manipulation</title>
+    <script src="./stringCalculations.js"></script>
+  </head>
+  <body>
+    <form>
+      String : <input type="text" id="string" name="string" /> SubString :
+      <input type="text" id="substring" name="substring" /> Replace String :
+      <input type="text" id="replacestring" name="replcestring" />
+
+      <input
+        type="radio"
+        id="searchsubstring"
+        name="operation"
+        value="searchsubstring"
+      />Search SubString In Main String
+      <label for="searchsubstring"></label>
+      <input
+        type="radio"
+        id="touppercase"
+        name="operation"
+        value="touppercase"
+      />To Upper Case
+      <label for="touppercase"></label>
+      <input
+        type="radio"
+        id="tolowercase"
+        name="operation"
+        value="tolowercase"
+      />To Lower Case
+      <label for="tolowercase"></label>
+      <input type="radio" id="trim" name="operation" value="trim" />Trim
+      <label for="trim"></label>
+      <input
+        type="radio"
+        id="concatenate"
+        name="operation"
+        value="concatenate"
+      />Concatenate
+      <label for="concatenate"></label>
+      <input
+        type="radio"
+        id="replace"
+        name="operation"
+        value="replace"
+      />Replace
+      <label for="replace"></label>
+
+      <button type="button" id="btn" name="btn" onclick="display()">
+        Display
+      </button>
+    </form>
+    <div id="myDiv"></div>
+  </body>
+</html>
